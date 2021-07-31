@@ -1,6 +1,7 @@
 " Set some editor parameters
 set number
 set encoding=utf-8
+set nowrap
 
 " Plugin manager auto install
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
