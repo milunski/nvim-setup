@@ -41,6 +41,7 @@ colorscheme dracula
 
 " Pseudo line limit but w/e
 :set colorcolumn=80
+:set mouse=a
 
 " On Vim startup
 autocmd StdinReadPre * let s:std_in=1
