@@ -31,7 +31,7 @@ set splitbelow
 
 " PLUGINS
 call plug#begin('~/.vim/plugged')
-    Plug 'ryanoasis/vim-devicons'
+    Plug 'marko-cerovac/material.nvim'
     Plug 'vim-airline/vim-airline'
     Plug 'morhetz/gruvbox'
     Plug 'SirVer/ultisnips'
@@ -50,9 +50,21 @@ call plug#end()
  endif
  syntax enable
  colorscheme gruvbox
-
+ 
 " ON STARTUP
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
+" GOLANG
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_fmt_command = "goimports"
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
