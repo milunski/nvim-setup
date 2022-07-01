@@ -31,7 +31,6 @@ set splitbelow
 
 " PLUGINS
 call plug#begin('~/.vim/plugged')
-    Plug 'marko-cerovac/material.nvim'
     Plug 'vim-airline/vim-airline'
     Plug 'morhetz/gruvbox'
     Plug 'SirVer/ultisnips'
@@ -42,14 +41,26 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
     Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 " KEYBINDINGS & COLORS
- if (has('termguicolors'))
- set termguicolors
- endif
- syntax enable
- colorscheme gruvbox
+" if (has('termguicolors'))
+" set termguicolors
+" endif
+" syntax enable
+
+ " Tokyonight
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+
+" Change the hint color to the orange color, and make the error color bright red
+let g:tokyonight_colors = {
+            \'hint': 'orange',
+            \'error': '#ff0000'
+            \}
+colorscheme tokyonight
  
 " ON STARTUP
 " Start NERDTree. If a file is specified, move the cursor to its window.
